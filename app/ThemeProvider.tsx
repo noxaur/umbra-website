@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-type Theme = "dark" | "light" | "system";
+type Theme = "dark" | "light"; /*| "system"*/
 
 // 1. Explicitly type the Context State
 type ThemeProviderState = {
@@ -10,12 +10,13 @@ type ThemeProviderState = {
 
 // 2. Apply the type to createContext
 const ThemeProviderContext = createContext<ThemeProviderState>({
-  theme: "system",
+  //theme: "system",
+  theme: "dark",
   setTheme: () => null,
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("system");
+  const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
     // On mount, sync React state with whatever is in localStorage
@@ -27,14 +28,14 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
 
-    if (theme === "system") {
-      const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
-        .matches
-        ? "dark"
-        : "light";
-      root.classList.add(systemTheme);
-      return;
-    }
+    // if (theme === "system") {
+    //   const systemTheme = window.matchMedia("(prefers-color-scheme: dark)")
+    //     .matches
+    //     ? "dark"
+    //     : "light";
+    //   root.classList.add(systemTheme);
+    //   return;
+    // }
 
     root.classList.add(theme);
     localStorage.setItem("theme", theme);
