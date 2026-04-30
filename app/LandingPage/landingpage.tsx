@@ -10,19 +10,13 @@ function ThemeToggle() {
   }
   return (
     <>
-      {theme === "dark" ? (
+      {
         <img
           onClick={handleClick}
           className={" size-19 "}
-          src="../public/light-mode.svg"
+          src={`/${theme}-mode.svg`}
         />
-      ) : (
-        <img
-          onClick={handleClick}
-          className={" size-19 "}
-          src="../public/dark-mode.svg"
-        />
-      )}
+      }
     </>
   );
 }
@@ -68,14 +62,14 @@ function Background() {
   return (
     <>
       <div className="flex flex-col absolute -z-1 items-center">
-        <img src={`../public/${theme}-bg.png`}></img>
-        <img src={`../public/umbra.svg`} className={"w-223 opacity-25"}></img>
+        <img src={`/${theme}-bg.png`}></img>
+        <img src={`/umbra.svg`} className={"w-223 opacity-25"}></img>
         <div className="flex flex-row -z-1 ">
           <div
             className={"absolute left-0 top-full mt-[20vh] -translate-x-1/2"}
           >
             <img
-              src={`../public/${theme}-sun-moon.png`}
+              src={`/${theme}-sun-moon.png`}
               className="rotate-45 w-131"
             ></img>
           </div>
@@ -83,7 +77,7 @@ function Background() {
             className={"absolute right-0 top-full mt-[20vh] translate-x-1/2"}
           >
             <img
-              src={`../public/${theme}-sun-moon.png`}
+              src={`/${theme}-sun-moon.png`}
               className="rotate-45 w-131"
             ></img>
           </div>
