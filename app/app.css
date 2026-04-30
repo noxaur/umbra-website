@@ -1,15 +1,61 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@layer {
+  :root {
+    --background: rgba(194, 194, 194, 1);
+    --card: rgba(226, 226, 226, 0.7);
+    --foreground: rgb(22, 21, 14);
+    --foreground-opposite: rgb(22, 21, 14);
+    --secondary: rgb(118, 118, 118);
+    --gold: rgb(200, 167, 44);
+  }
+
+  .dark {
+    --background: rgba(11, 11, 11, 1);
+    --card: rgba(23, 23, 23, 0.85);
+    --foreground: rgb(234, 234, 234);
+    --foreground-opposite: rgb(22, 21, 14);
+    --secondary: rgb(118, 118, 118);
+    --gold: rgba(220, 184, 48, 1);
+  }
+
+  body {
+    color: var(--foreground);
+  }
 }
 
-html,
-body {
-  @apply bg-white dark:bg-gray-950;
+@theme {
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+  --color-gold: var(--gold);
+  --color-text: var(--foreground);
+  --color-text-opposite: var(--foreground-opposite);
+  --color-secondary: var(--secondary);
+  --color-umbra: var(--background);
+  --color-card-bg: var(--card);
+}
+
+p {
+  font-size: 1.5rem;
+}
+h1 {
+  font-size: 8rem;
+  font-weight: 700;
+  letter-spacing: 0.88rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 2rem;
+}
+
+:root {
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  background-color: var(--background);
 }

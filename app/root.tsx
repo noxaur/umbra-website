@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
+import { ThemeProvider } from "./ThemeProvider";
 import type { Route } from "./+types/root";
 import "./app.css";
 
@@ -22,6 +22,18 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
 ];
+// Script to prevent FOUC
+const themeCheckScript = `
+  (function() {
+    const theme = localStorage.getItem('theme');
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (theme === 'dark' || (!theme && systemDark)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  })();
+`;
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -31,10 +43,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        {/* Blocking script  */}
+        <script dangerouslySetInnerHTML={{ __html: themeCheckScript }} />
       </head>
       <body>
-        {children}
-        <ScrollRestoration />
+        <ThemeProvider>
+          {children}
+          <ScrollRestoration />
+        </ThemeProvider>
         <Scripts />
       </body>
     </html>
