@@ -1,65 +1,9 @@
-import { useState } from "react";
+import { type JSX, type ReactNode } from "react";
 import { Link } from "react-router";
 import { useTheme } from "~/ThemeProvider";
-
-function ThemeToggle() {
-	const { theme, setTheme } = useTheme();
-
-	function handleClick(): void {
-		setTheme(theme === "dark" ? "light" : "dark");
-	}
-	return (
-		<>
-			{
-				<img
-					onClick={handleClick}
-					className={" size-19 "}
-					src={`/${theme}-mode.svg`}
-				/>
-			}
-		</>
-	);
-}
-
-function Header() {
-	return (
-		<div
-			className={
-				"flex content-center justify-between absolute w-full p-10 h-0 overflow-visible"
-			}
-		>
-			<ThemeToggle />
-			<Link to={"https://discord.gg/gTT5uhwXJB"}>
-				<button className="bg-gold py-3.5 rounded-[0.9375rem] w-40.25 flex place-content-center gap-25.25 cursor-pointer">
-					<p className={"text-text-opposite"}>DISCORD</p>
-				</button>
-			</Link>
-		</div>
-	);
-}
-
-function Card({ children, cssClasses = "" }) {
-	return (
-		<div
-			className={`p-12 bg-card-bg rounded-[1.5625rem] flex flex-col items-center w-full ${cssClasses}`}
-		>
-			{children}
-		</div>
-	);
-}
-
-function Seperator({ direction }) {
-	if (direction === "hr" || direction === "horizontal") {
-		return (
-			<div className={"h-2px w-md border rounded-2xl border-gold"}></div>
-		);
-	} else if (direction === "vr" || direction === "vertical") {
-		return (
-			<div className={"h-180 w-2px border rounded-2xl border-gold"}></div>
-		);
-	}
-	return <div className={"text-red-600"}>Seperator bad argument</div>;
-}
+import Header from "./header";
+import Separator from "./separator";
+import Card from "./card";
 
 function Background() {
 	const { theme } = useTheme();
@@ -95,7 +39,15 @@ function Background() {
 	);
 }
 
-function TLDRInfo({ question, answer, line = true }) {
+function TLDRInfo({
+	question,
+	answer,
+	line = true,
+}: {
+	question: string;
+	answer: string;
+	line?: boolean;
+}) {
 	return (
 		<>
 			<div className={"flex flex-col gap-12"}>
@@ -103,14 +55,14 @@ function TLDRInfo({ question, answer, line = true }) {
 					<p>{question}</p>
 					<p>{answer}</p>
 				</div>
-				{line ? <Seperator direction={"hr"} /> : ""}
+				{line ? <Separator width="w-md" height="h-[2px]" /> : ""}
 			</div>
 		</>
 	);
 }
 
-function OrderedList({ items }) {
-	const listItems = items.map((item: string, index: number) => {
+function OrderedList({ items }: { items: Array<string> }) {
+	const listItems = items.map((item: string, index: number): JSX.Element => {
 		return (
 			<li key={index} className={"text-gold"}>
 				<span className={"text-text ml-22"}>{item}</span>
@@ -157,11 +109,11 @@ export default function LandingPage() {
 							guild tag in-game or apply through our Discord
 							server. <br />
 							<br />
-							In Umbra we dont have a rank system, we only have 2
+							In Umbra we don't have a rank system, we only have 2
 							ranks, leader and member. This is to ensure that all
 							members are treated equally.
 						</p>
-						<Seperator direction={"vr"} />
+						<Separator width="w-[2px]" height="h-md" />
 						<div className={"flex flex-col gap-12 w-122.25"}>
 							<TLDRInfo question={"Guild"} answer={"Umbra"} />
 							<TLDRInfo
@@ -200,7 +152,7 @@ export default function LandingPage() {
 							<p className="text-gold">Server</p>
 							<p>MineShoku Tensei</p>
 						</div>
-						<Seperator direction={"vr"} />
+						<Separator width="w-[2px]" height="h-md" />
 						<div className={"w-126"}>
 							<p className="text-gold">Server</p>
 							<p>MineShoku Tensei</p>
