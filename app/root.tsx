@@ -5,6 +5,7 @@ import {ThemeProvider} from "./ThemeProvider";
 import type {Route} from "./+types/root";
 import "./app.css";
 import type {ReactNode} from "react";
+import {SpeedInsights} from "@vercel/speed-insights/react"
 
 export const links: Route.LinksFunction = () => [
     {rel: "preconnect", href: "https://fonts.googleapis.com"},
@@ -54,6 +55,7 @@ export function Layout({children}: { children: ReactNode }) {
         </ThemeProvider>
         <ScrollRestoration/>
         <Scripts/>
+        <SpeedInsights/>
         </body>
         </html>
     );
