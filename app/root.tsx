@@ -48,6 +48,7 @@ export function Layout({children}: { children: ReactNode }) {
             <script
                 dangerouslySetInnerHTML={{__html: themeCheckScript}}
             />
+            <meta property="og:image" content="/umbra.svg"/>
         </head>
         <body>
         <ThemeProvider>
