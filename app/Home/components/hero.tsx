@@ -1,10 +1,8 @@
 import Card from "~/Home/components/card";
-import {useTheme} from "~/ThemeProvider";
 import {type ReactNode} from "react";
 import {InfoList} from "./list";
 
 export default function Hero() {
-    const {theme} = useTheme();
     const allInfo: ReactNode = (
         <p className={"w-122.25 text-center"}>
             We are an upcoming MineShoku Tensei guild focused on Trading,
@@ -25,7 +23,7 @@ export default function Hero() {
     return (
 
         // Start of Hero CARD
-        <Card className="h-screen w-full">
+        <Card className="h-fit w-full">
             <h1 className={"-mt-10"}>UMBRA</h1>
             <h2>Who we are</h2>
             <div className={"flex gap-40 mt-8"}>
