@@ -6,6 +6,7 @@ import type {Route} from "./+types/root";
 import "./app.css";
 import type {ReactNode} from "react";
 import {SpeedInsights} from "@vercel/speed-insights/react"
+import {Analytics} from "@vercel/analytics/next"
 
 export const links: Route.LinksFunction = () => [
     {rel: "preconnect", href: "https://fonts.googleapis.com"},
@@ -56,6 +57,7 @@ export function Layout({children}: { children: ReactNode }) {
         <ScrollRestoration/>
         <Scripts/>
         <SpeedInsights/>
+        <Analytics/>
         </body>
         </html>
     );
