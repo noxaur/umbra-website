@@ -4,10 +4,10 @@ type ThemeProp = { theme: string };
 
 function SunMoon({theme}: ThemeProp) {
     return (
-        <div className="flex -z-1 w-screen overflow-hidden justify-center opacity-50 lg:opacity-100 ">
+        <div className="hidden lg:flex -z-1 w-screen overflow-hidden justify-center opacity-50 lg:opacity-100 ">
             <div
                 className={
-                    "hidden lg:flex absolute left-0 mt-[20vh] -translate-x-1/2 rotate-45"
+                    "absolute left-0 mt-[20vh] -translate-x-1/2 rotate-45"
                 }
             >
                 <img
@@ -18,13 +18,13 @@ function SunMoon({theme}: ThemeProp) {
             </div>
             <div
                 className={
-                    "absolute lg:right-0 mt-[20vh] lg:translate-x-1/2 rotate-45"
+                    "absolute right-0 mt-[20vh] lg:translate-x-1/2 rotate-45"
                 }
             >
                 <img
                     src={`/${theme}-sun-moon.png`}
                     alt={theme + "Luminaries right"}
-                    className="w-90 lg:w-121"
+                    className="w-121"
                 ></img>
             </div>
         </div>
