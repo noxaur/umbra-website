@@ -1,4 +1,3 @@
-import {useTheme} from "~/ThemeProvider";
 import Header from "./components/header";
 import Background from "./components/background";
 import Hero from "./components/hero";
@@ -18,7 +17,6 @@ function Footer() {
 
 
 export default function LandingPage() {
-    const {theme} = useTheme();
     const generalRules: Array<string> = [
         "Immaturity within the guild will not be tolerated.",
         "Abusive language towards guild members or other players will result in punishment.",
@@ -31,10 +29,9 @@ export default function LandingPage() {
     ];
     return (
         <div className="h-fit">
-            <Background theme={theme}/>
+            <Background/>
             <Header/>
-
-            <div className="flex flex-col items-center p-5 gap-5">
+            <div className="flex flex-col items-center p-5 gap-5 h-fit">
                 <Hero/>
                 <Card className="w-full">
                     <h2>Guild rules</h2>
