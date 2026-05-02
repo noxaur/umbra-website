@@ -10,8 +10,8 @@ import {Link} from "react-router";
 function Footer() {
     return (
         <div className="flex flex-col items-center h-fit gap-10 p-10 w-full">
-            <Separator className={"w-full h-0.5 bg-gray-700"}/>
-            <p className={"text-gray-900"}>© 2026 Umbra Guild. All rights reserved.</p>
+            <Separator className={"w-full h-0.5 bg-card-bg!"}/>
+            <p className={"text-card-bg!"}>© 2026 Umbra Guild. All rights reserved.</p>
         </div>
     )
 }
