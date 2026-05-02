@@ -17,7 +17,7 @@ function ThemeToggle({theme, setTheme}: ThemeProps) {
                 <img
                     onClick={handleClick}
                     alt={"toggle dark/light"}
-                    className={" size-19 "}
+                    className={" size-12 lg:size-19 "}
                     src={`/${theme === "dark" ? "light" : "dark"}-mode.svg`}
                 />
             }
