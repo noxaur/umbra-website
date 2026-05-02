@@ -6,7 +6,7 @@ import type {Route} from "./+types/root";
 import "./app.css";
 import type {ReactNode} from "react";
 import {SpeedInsights} from "@vercel/speed-insights/react"
-import {Analytics} from "@vercel/analytics/next"
+import {Analytics} from "@vercel/analytics/react"
 
 export const links: Route.LinksFunction = () => [
     {rel: "preconnect", href: "https://fonts.googleapis.com"},
