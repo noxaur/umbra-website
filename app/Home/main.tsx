@@ -1,4 +1,3 @@
-import {useTheme} from "~/ThemeProvider";
 import Header from "./components/header";
 import Background from "./components/background";
 import Hero from "./components/hero";
@@ -6,6 +5,7 @@ import Card from "~/Home/components/card";
 import Separator from "~/Home/components/separator";
 import {NumberList} from "~/Home/components/list";
 import {Link} from "react-router";
+import {useMediaQuery} from "react-responsive";
 
 function Footer() {
     return (
@@ -17,8 +17,77 @@ function Footer() {
 }
 
 
+function Requirements() {
+    const isMobile = useMediaQuery({query: "(max-width: 1024px)"})
+
+    return (
+        <Card className="w-full lg:w-276 py-7.5 px-20 gap-8">
+            <h3>Requirements</h3>
+            {isMobile ?
+                (<div className={"flex flex-col self-stretch justify-between gap-10"}>
+                    <div className={"flex flex-col text-center"}>
+                        <p className="text-gold">Server</p>
+                        <p>MineShoku Tensei</p>
+                    </div>
+                    <div className={"flex flex-col text-center"}>
+                        <p className="text-gold">Attitude</p>
+                        <p>Loyal, non-toxic, Won’t cause drama</p>
+                    </div>
+                    <div className={"flex flex-col text-center"}>
+                        <p className="text-gold">Activity</p>
+                        <p>3+ hrs/week</p>
+                    </div>
+                    <div className={"flex flex-col text-center"}>
+                        <p className="text-gold">Server</p>
+                        <p>MineShoku Tensei</p>
+                    </div>
+                    <div className={"flex flex-col text-center"}>
+                        <p className="text-gold">Voice</p>
+                        <p>Mic preferred but not required</p>
+                    </div>
+                    <div className={"flex flex-col text-center"}>
+                        <p className="text-gold">Commitment</p>
+                        <p>Willing to play often</p>
+                    </div>
+                </div>)
+                : (<div className={"flex mt-12 self-stretch content-center justify-between"}>
+                    <div className={"flex flex-col self-stretch justify-between pt-10 pb-10 gap-25"}>
+                        <div className={"flex flex-col items-start w-117.75"}>
+                            <p className="text-gold">Server</p>
+                            <p>MineShoku Tensei</p>
+                        </div>
+                        <div className={"flex flex-col items-start w-117.75"}>
+                            <p className="text-gold">Attitude</p>
+                            <p>Loyal, non-toxic, Won’t cause drama</p>
+                        </div>
+                        <div className={"flex flex-col items-start w-117.75"}>
+                            <p className="text-gold">Activity</p>
+                            <p>3+ hrs/week</p>
+                        </div>
+                    </div>
+                    <Separator className={"w-[2px] h-md"}/>
+                    <div className={"flex flex-col self-stretch justify-between pt-10 pb-10 gap-25"}>
+                        <div className={"flex flex-col items-end w-117.75"}>
+                            <p className="text-gold">Server</p>
+                            <p>MineShoku Tensei</p>
+                        </div>
+                        <div className={"flex flex-col items-end w-117.75"}>
+                            <p className="text-gold">Voice</p>
+                            <p>Mic preferred but not required</p>
+                        </div>
+                        <div className={"flex flex-col items-end w-117.75"}>
+                            <p className="text-gold">Commitment</p>
+                            <p>Willing to play often</p>
+                        </div>
+                    </div>
+                </div>)
+            }
+
+        </Card>
+    );
+}
+
 export default function LandingPage() {
-    const {theme} = useTheme();
     const generalRules: Array<string> = [
         "Immaturity within the guild will not be tolerated.",
         "Abusive language towards guild members or other players will result in punishment.",
@@ -31,10 +100,9 @@ export default function LandingPage() {
     ];
     return (
         <div className="h-fit">
-            <Background theme={theme}/>
+            <Background/>
             <Header/>
-
-            <div className="flex flex-col items-center p-5 gap-5">
+            <div className="flex flex-col items-center p-5 gap-2 lg:gap-5 h-fit">
                 <Hero/>
                 <Card className="w-full">
                     <h2>Guild rules</h2>
@@ -47,41 +115,8 @@ export default function LandingPage() {
                     <h3>PvP and Operations</h3>
                     <NumberList items={pvpAndOperations}/>
                 </Card>
-                <Card className="w-276 py-7.5 px-20 gap-8">
-                    <h3>Requirements</h3>
-                    <div className={"flex mt-12 self-stretch content-center justify-between"}>
-                        <div className={"flex flex-col self-stretch justify-between pt-10 pb-10 gap-25"}>
-                            <div className={"flex flex-col items-start w-117.75"}>
-                                <p className="text-gold">Server</p>
-                                <p>MineShoku Tensei</p>
-                            </div>
-                            <div className={"flex flex-col items-start w-117.75"}>
-                                <p className="text-gold">Attitude</p>
-                                <p>Loyal, non-toxic, Won’t cause drama</p>
-                            </div>
-                            <div className={"flex flex-col items-start w-117.75"}>
-                                <p className="text-gold">Activity</p>
-                                <p>3+ hrs/week</p>
-                            </div>
-                        </div>
-                        <Separator className={"w-[2px] h-md"}/>
-                        <div className={"flex flex-col self-stretch justify-between pt-10 pb-10 gap-25"}>
-                            <div className={"flex flex-col items-end w-117.75"}>
-                                <p className="text-gold">Server</p>
-                                <p>MineShoku Tensei</p>
-                            </div>
-                            <div className={"flex flex-col items-end w-117.75"}>
-                                <p className="text-gold">Voice</p>
-                                <p>Mic preferred but not required</p>
-                            </div>
-                            <div className={"flex flex-col items-end w-117.75"}>
-                                <p className="text-gold">Commitment</p>
-                                <p>Willing to play often</p>
-                            </div>
-                        </div>
-                    </div>
-                </Card>
-                <Card className="w-276 gap-12">
+                <Requirements/>
+                <Card className="w-full lg:w-276 gap-12">
                     <h3>How to apply</h3>
                     <p className={"text-center"}>
                         Join our Discord server below, fill out the application
@@ -90,7 +125,7 @@ export default function LandingPage() {
                     </p>
                     <Link to={"https://discord.gg/gTT5uhwXJB"}
                           className="bg-gold flex place-content-center py-3.5 rounded-[0.9375rem] w-full gap-25.25 cursor-pointer">
-                        <p className={"text-text-opposite"}>DISCORD</p>
+                        <p className={"text-text-opposite"}>JOIN OUR DISCORD</p>
                     </Link>
                 </Card>
             </div>
