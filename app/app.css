@@ -47,10 +47,11 @@ html {
     overflow-x: hidden;
 }
 
+/*
 * {
-    transition: all ease-in-out 0.15s !important;
+    transition: all ease-in-out 0.15s;
 }
-
+*/
 p, span, li {
     font-size: clamp(1.25rem, 1.1838rem + 0.2635vw, 1.5rem);
 }

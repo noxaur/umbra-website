@@ -1,13 +1,20 @@
 import Card from "~/Home/components/card";
 import Separator from "~/Home/components/separator";
-import {InfoRow} from "~/Home/components/list";
+import {InfoRow} from "~/Home/components/list"
+import {motion} from "motion/react"
 
 export default function Hero() {
     return (
 
         // Start of Hero CARD
         <Card className="h-fit w-full gap-3 pb-5">
-            <h1 className={"-mt-5 -mb-2"}>UMBRA</h1>
+            <div>
+                <motion.h1 initial={{scale: 0,}}
+                           animate={{scale: 1}}
+                           className={"-mt-5 -mb-2"}
+                           style={{willChange: "opacity"}}>UMBRA
+                </motion.h1>
+            </div>
             <h4>A GUILD IN MINESHOKU TENSEI</h4>
             <h2>Who we are</h2>
             <div className={"flex justify-center gap-40 w-full"}>

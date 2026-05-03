@@ -1,3 +1,4 @@
+import {motion} from "motion/react";
 import {Link} from "react-router";
 import {useTheme} from "~/ThemeProvider";
 
@@ -14,11 +15,12 @@ function ThemeToggle({theme, setTheme}: ThemeProps) {
     return (
         <>
             {
-                <img
+                <motion.img
                     onClick={handleClick}
                     alt={"toggle dark/light"}
                     className={" size-12 lg:size-19 "}
                     src={`/${theme === "dark" ? "light" : "dark"}-mode.svg`}
+
                 />
             }
         </>
