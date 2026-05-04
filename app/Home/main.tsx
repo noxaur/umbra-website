@@ -26,43 +26,43 @@ function Requirements() {
             {isMobile ?
                 (<div className={"flex flex-col self-stretch justify-between gap-10"}>
                     <div className={"flex flex-col text-center"}>
-                        <p className="text-gold">Server</p>
-                        <p>MineShoku Tensei</p>
+                        <p className="text-gold">Invite only</p>
+                        <p>No</p>
                     </div>
                     <div className={"flex flex-col text-center"}>
                         <p className="text-gold">Attitude</p>
-                        <p>Loyal, non-toxic, Won’t cause drama</p>
+                        <p>Won't cause drama and non-toxic</p>
                     </div>
                     <div className={"flex flex-col text-center"}>
                         <p className="text-gold">Activity</p>
-                        <p>3+ hrs/week</p>
+                        <p>Not needed, you can even be a part of another guild.</p>
                     </div>
                     <div className={"flex flex-col text-center"}>
                         <p className="text-gold">Server</p>
                         <p>MineShoku Tensei</p>
                     </div>
                     <div className={"flex flex-col text-center"}>
-                        <p className="text-gold">Voice</p>
-                        <p>Mic preferred but not required</p>
+                        <p className="text-gold">Loyalty</p>
+                        <p>Not required as we are more like a middleman for trading.</p>
                     </div>
                     <div className={"flex flex-col text-center"}>
                         <p className="text-gold">Commitment</p>
-                        <p>Willing to play often</p>
+                        <p>Secure and easy trading</p>
                     </div>
                 </div>)
                 : (<div className={"flex mt-12 self-stretch content-center justify-between"}>
                     <div className={"flex flex-col self-stretch justify-between pt-10 pb-10 gap-25"}>
                         <div className={"flex flex-col items-start w-117.75"}>
-                            <p className="text-gold">Server</p>
-                            <p>MineShoku Tensei</p>
+                            <p className="text-gold">Invite only</p>
+                            <p>No</p>
                         </div>
                         <div className={"flex flex-col items-start w-117.75"}>
                             <p className="text-gold">Attitude</p>
-                            <p>Loyal, non-toxic, Won’t cause drama</p>
+                            <p>Won't cause drama and non-toxic</p>
                         </div>
                         <div className={"flex flex-col items-start w-117.75"}>
                             <p className="text-gold">Activity</p>
-                            <p>3+ hrs/week</p>
+                            <p>Not needed, you can even be a part of another guild.</p>
                         </div>
                     </div>
                     <Separator className={"w-[2px] h-md"}/>
@@ -72,12 +72,12 @@ function Requirements() {
                             <p>MineShoku Tensei</p>
                         </div>
                         <div className={"flex flex-col items-end w-117.75"}>
-                            <p className="text-gold">Voice</p>
-                            <p>Mic preferred but not required</p>
+                            <p className="text-gold">Loyalty</p>
+                            <p>Not required</p>
                         </div>
                         <div className={"flex flex-col items-end w-117.75"}>
                             <p className="text-gold">Commitment</p>
-                            <p>Willing to play often</p>
+                            <p>Secure and easy trading</p>
                         </div>
                     </div>
                 </div>)
@@ -91,7 +91,7 @@ export default function LandingPage() {
     const generalRules: Array<string> = [
         "Immaturity within the guild will not be tolerated.",
         "Abusive language towards guild members or other players will result in punishment.",
-        "All members are treated equally regardless of rank outside of Umbra.",
+        "All members are treated equally regardless of rank inside of Umbra.",
         "We operate as a team - no acting against members, allies, or approved friends.",
     ];
     const pvpAndOperations: Array<string> = [
@@ -119,9 +119,9 @@ export default function LandingPage() {
                 <Card className="w-full lg:w-276 gap-12">
                     <h3>How to apply</h3>
                     <p className={"text-center"}>
-                        Join our Discord server below, fill out the application
-                        request in the designated channel, and wait to be
-                        accepted or denied by leadership.
+                        Join our Discord server below and fill out the application request. Specify what reason you are
+                        here for and then wait for getting accepted. After that you can verify , and if you have
+                        problems open a ticket.
                     </p>
                     <Link to={"https://discord.gg/gTT5uhwXJB"}
                           className="bg-gold flex place-content-center py-3.5 rounded-[0.9375rem] w-full gap-25.25 cursor-pointer">
