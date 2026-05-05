@@ -34,7 +34,7 @@ export default function Header() {
             }
         >
             <ThemeToggle {...theme} />
-            <Link to={"https://discord.gg/gTT5uhwXJB"}>
+            <Link to={"https://discord.gg/hNFhAxCrVP"}>
                 <button
                     className="hidden lg:flex bg-gold py-3.5 rounded-[0.9375rem] w-40.25 place-content-center gap-25.25 cursor-pointer">
                     <p className={"text-text-opposite"}>DISCORD</p>

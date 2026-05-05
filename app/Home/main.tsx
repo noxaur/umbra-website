@@ -123,7 +123,7 @@ export default function LandingPage() {
                         here for and then wait for getting accepted. After that you can verify , and if you have
                         problems open a ticket.
                     </p>
-                    <Link to={"https://discord.gg/gTT5uhwXJB"}
+                    <Link to={"https://discord.gg/hNFhAxCrVP"}
                           className="bg-gold flex place-content-center py-3.5 rounded-[0.9375rem] w-full gap-25.25 cursor-pointer">
                         <p className={"text-text-opposite"}>JOIN OUR DISCORD</p>
                     </Link>
